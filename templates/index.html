@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><div class="hero-copy"><span class="eyebrow">YOUR JOURNEY, REIMAGINED</span><h1>Explore the world.<br><em>Plan your journey.</em></h1><p>Build a thoughtful travel itinerary around your dates, budget and travel style.</p></div><div class="hero-art"><div class="orbit">✈</div><div class="art-card">✦ &nbsp; Your next story starts here</div></div></section>
+<section class="planner" id="explore"><div class="section-heading"><div><span class="eyebrow">SMART TRIP BUILDER</span><h2>Where would you like to go?</h2><p>Tell us a little about your trip.</p></div><span class="step">01 / PLAN</span></div>
+<form action="/plan" method="post" class="form-grid">
+<label>From<input name="origin" placeholder="e.g. Jaipur" required></label>
+<label>Destination<input name="destination" placeholder="e.g. Manali" required></label>
+<label>Departure date<input type="date" name="start_date" id="start_date" required></label>
+<label>Return date<input type="date" name="end_date" id="end_date" required></label>
+<label>Travellers<input type="number" name="travellers" min="1" max="20" value="2" required></label>
+<label>Total trip budget<input type="number" name="budget" min="1" step="1" placeholder="e.g. 25000" required></label>
+<label>Currency<select name="currency"><option>INR</option><option>USD</option><option>EUR</option><option>GBP</option></select></label>
+<label class="wide">Your travel preferences<textarea name="preferences" rows="3" placeholder="Adventure, nature, food, relaxed pace, family-friendly..."></textarea></label>
+<div class="wide form-bottom"><small>AI-generated estimates are suggestions, not live bookings or confirmed prices.</small><button class="button" type="submit">Generate my trip <span>↗</span></button></div>
+</form></section>
+<section class="popular"><div class="section-heading"><div><span class="eyebrow">GET INSPIRED</span><h2>Popular destinations</h2></div></div><div class="destinations">
+<button type="button" data-destination="Jaipur"> <span>🏰</span><b>Jaipur</b><small>Heritage & culture</small></button>
+<button type="button" data-destination="Manali"> <span>🏔️</span><b>Manali</b><small>Mountains & adventure</small></button>
+<button type="button" data-destination="Goa"> <span>🌊</span><b>Goa</b><small>Beaches & sunsets</small></button>
+<button type="button" data-destination="Udaipur"> <span>🛶</span><b>Udaipur</b><small>Lakes & royal charm</small></button>
+</div></section>
+{% endblock %}

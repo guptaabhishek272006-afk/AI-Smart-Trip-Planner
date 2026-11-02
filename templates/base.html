@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}AI Smart Trip Planner{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head><body>
+<nav class="nav"><a class="brand" href="/">✦ TripWise</a><div class="navlinks"><a href="/">Home</a><a href="/#explore">Explore</a><a href="/my-trips">My Trips</a><a href="/about">About</a></div></nav>
+<main class="container">{% with messages=get_flashed_messages(with_categories=true) %}{% if messages %}{% for category,message in messages %}<div class="alert {{category}}">{{message}}</div>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+<footer>✦ TripWise <span>Plan thoughtfully. Travel freely.</span></footer><script src="{{ url_for('static',filename='app.js') }}"></script></body></html>
